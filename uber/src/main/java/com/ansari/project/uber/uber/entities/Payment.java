@@ -4,6 +4,9 @@ package com.ansari.project.uber.uber.entities;
 import com.ansari.project.uber.uber.entities.enums.PaymentMethod;
 import com.ansari.project.uber.uber.entities.enums.PaymentStatus;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 public class Payment {
@@ -22,5 +25,8 @@ public class Payment {
 
     @OneToOne(fetch = FetchType.LAZY)
     private PaymentStatus paymentStatus;
+
+    @CreationTimestamp
+    private LocalDateTime paymentTime;
 
 }
