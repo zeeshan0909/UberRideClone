@@ -1,6 +1,5 @@
 package com.ansari.project.uber.uber.entities;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +16,6 @@ public class Rider {
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
-    private Double rating;
 
+    private Double rating;
 }

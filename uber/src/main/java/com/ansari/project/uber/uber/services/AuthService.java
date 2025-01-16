@@ -1,4 +1,4 @@
 package com.ansari.project.uber.uber.services;
 
-public interface DistanceService {
+public interface AuthService {
 }

@@ -1,15 +1,14 @@
 package com.ansari.project.uber.uber.entities;
 
-
-import com.ansari.project.uber.uber.entities.enums.PaymentMethod;
+import com.ansari.project.uber.uber.entities.enums.PaymentsMethod;
 import com.ansari.project.uber.uber.entities.enums.RideRequestStatus;
+import com.ansari.project.uber.uber.entities.enums.RideStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.locationtech.jts.geom.Point;
 
-import java.awt.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -28,16 +27,15 @@ public class RideRequest {
     private Point dropOffLocation;
 
     @CreationTimestamp
-    private LocalDateTime requestTime;
+    private LocalDateTime requestedTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Rider rider;
 
     @Enumerated(EnumType.STRING)
-    private PaymentMethod paymentMethod;
+    private PaymentsMethod paymentsMethod;
 
     @Enumerated(EnumType.STRING)
-    private RideRequestStatus rideRequestStatus;
-
+    private RideStatus rideStatus;
 
 }
